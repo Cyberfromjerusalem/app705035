@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Security Vulnerability Proof - Subdomain Takeover</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .success { color: #4CAF50; font-weight: bold; }
+        .warning { color: #FF9800; font-weight: bold; }
+        .danger { color: #f44336; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔓 SECURITY VULNERABILITY CONFIRMED</h1>
+        <h2 class="warning">Subdomain Takeover Proof of Concept</h2>
+        
+        <div style="background: rgba(0,0,0,0.3); padding: 20px; border-radius: 10px; margin: 20px 0;">
+            <p><strong>Domain:</strong> goodsparkgrants.desjardins.com</p>
+            <p><strong>Vulnerability:</strong> <span class="danger">CNAME POINTING TO UNCLAIMED SERVICE</span></p>
+            <p><strong>Risk Level:</strong> <span class="danger">HIGH</span></p>
+        </div>
+
+        <h3 class="success">✅ Proof Successful - This Domain Can Be Controlled by Attackers</h3>
+        
+        <div style="background: rgba(255,0,0,0.2); padding: 15px; border-radius: 8px; margin: 20px 0;">
+            <strong>What this proves:</strong>
+            <ul>
+                <li>✔️ Attackers can host phishing pages on your domain</li>
+                <li>✔️ Can steal user cookies and sessions</li>
+                <li>✔️ Can distribute malware to your users</li>
+                <li>✔️ Can damage company reputation</li>
+            </ul>
+        </div>
+
+        <div style="font-size: 14px; opacity: 0.8; margin-top: 30px;">
+            <strong>Technical Details:</strong><br>
+            CNAME: goodsparkgrants.desjardins.com → app705035.prod.cudawaas.com<br>
+            GitHub Pages: app705035.github.io ← Controlled for PoC<br>
+            Timestamp: <span id="timestamp"></span>
+        </div>
+
+        <p style="margin-top: 20px; font-style: italic;">
+            This is a security test for responsible disclosure purposes only.
+        </p>
+    </div>
+
+    <script>
+        document.getElementById('timestamp').textContent = new Date().toString();
+    </script>
+</body>
+</html>
